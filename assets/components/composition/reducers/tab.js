@@ -1,15 +1,16 @@
 'use strict'
 
 import {
-  RECEIVE_TEXT
+  RECEIVE_BODY
 } from '../actions'
+import { Map as iMap } from 'immutable'
 
-const initialState = ''
+const initialState = iMap({})
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case RECEIVE_TEXT:
-      return action.text
+    case RECEIVE_BODY:
+      return iMap(action.body)
     default:
       return state
   }

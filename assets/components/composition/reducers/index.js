@@ -1,10 +1,10 @@
 'use strict'
 
 import { combineReducers } from 'redux'
-import bodyText from './body'
+import tabContent from './tab'
 
 export default function () {
   return combineReducers({
-    bodyText
+    tabContent
   })
 }

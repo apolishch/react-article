@@ -15,21 +15,21 @@ const makeRequest = (options) => {
   return request(defaultOptions.merge(options).toJS())
 }
 
-export const RECEIVE_TEXT = 'RECEIVE_TEXT'
-export function receiveText (text) {
+export const RECEIVE_BODY = 'RECEIVE_BODY'
+export function receiveBody (body) {
   return (dispatch) => {
     dispatch({
-      type: RECEIVE_TEXT,
-      text
+      type: RECEIVE_BODY,
+      body
     })
   }
 }
 
-export function fetchText () {
+export function fetchBody () {
   return (dispatch) => {
     return makeRequest({
-      url: resolve(config.apiUri, 'api/textBody')
+      url: resolve(config.apiUri, 'api/multiTabText')
     })
-    .then(response => dispatch(receiveText(response)))
+    .then(response => dispatch(receiveBody(response)))
   }
 }

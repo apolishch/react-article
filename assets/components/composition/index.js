@@ -3,10 +3,10 @@
 import React, { Component } from 'react'
 import store from './store'
 import reducer from'./reducers'
-import { fetchText } from './actions'
+import { fetchBody } from './actions'
 
 export default class extends Component {
-  static displayName = 'BasicTextDisplay';
+  static displayName = 'Composition Example';
   constructor (props) {
     super(props)
     this.state = {
@@ -16,13 +16,13 @@ export default class extends Component {
 
   componentDidMount () {
     const { store: { dispatch } } = this.state
-    dispatch(fetchText()).then(() => this.setState({
-      bodyText: this.state.store.getState().bodyText
+    dispatch(fetchBody()).then(() => this.setState({
+      tabs: this.state.store.getState().tabContent
     }))
 
     this.subscriber = this.state.store.subscribe((state) => {
       this.setState({
-        bodyText: this.state.store.getState().bodyText
+        tabs: this.state.store.getState().tabContent
       })
     })
   }
@@ -32,10 +32,10 @@ export default class extends Component {
   }
 
   render () {
-    const { bodyText } = this.state
+    const { tabs } = this.state
     return (
       <div className='body-text'>
-        { bodyText }
+        { tabs }
       </div>
     )
   }
