@@ -5,17 +5,17 @@ const path = require('path')
 const express = require('express')
 let app = express()
 
-app.use(express.static('build'));
+app.use(express.static('build'))
 
-app.get('/', (req, res) => {
+app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/templates/react_article.html'))
 })
 
-app.get('/api/textBody', (req, res) => {
+app.get('/api/textBody', function (req, res) {
   res.send('LOREM IPSUM')
 })
 
-app.get('/api/multiTabText', (req, res) => {
+app.get('/api/multiTabText', function (req, res) {
   res.send({
     tab1: {
       editable: false,

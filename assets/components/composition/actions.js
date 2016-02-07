@@ -33,3 +33,19 @@ export function fetchBody () {
     .then(response => dispatch(receiveBody(response)))
   }
 }
+
+export const SELECT_TAB = 'SELECT_TAB'
+export function tabSelected (tabKey) {
+  return (dispatch) => {
+    dispatch({
+      type: SELECT_TAB,
+      tabKey
+    })
+  }
+}
+
+export function selectTab (tab) {
+  return (dispatch) => {
+    dispatch(tabSelected(tab))
+  }
+}
