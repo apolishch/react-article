@@ -17,14 +17,7 @@
     "url": "https://github.com/apolishch/react-article/issues"
   },
   "standard": {
-    "parser": "babel-eslint",
-    "globals": [
-      "describe",
-      "should",
-      "beforeEach",
-      "afterEach",
-      "it"
-    ]
+    "parser": "babel-eslint"
   },
   "homepage": "https://github.com/apolishch/react-article#readme",
   "dependencies": {
